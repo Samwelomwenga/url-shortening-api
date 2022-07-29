@@ -5,78 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
   
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+ 
 </head>
 <body>
   <main>
     <header>
       <img src="images\logo.svg" loading="lazy" alt="logo">
-      <div>
-        <ul>
+      <nav class="nav-bar">
+        <ul class="ul-navigation">
           <li>Features</li>
           <li>Pricing</li>
           <li>Resources</li>
+          <hr>
         </ul>
-        <ul>
+        <ul class="ul-action">
           <li>Login</li>
-          <li><button>Sign Up</button></li>
+          <li><button class="btn-sign-up">Sign Up</button></li>
         </ul>
-      </div>
+      </nav>
     </header>
-    <section>
-      <img src="images\illustration-working.svg" loading="lazy" alt="illustration-working">
-      <h1> More than just shorter links</h1>
+    <section class="intro">
+      <img class="illustration-working-image" src="images\illustration-working.svg" loading="lazy" alt="illustration-working">
+      <h1 class="intro-heading"> More than just shorter links</h1>
       <p>Build your brand’s recognition and get detailed insights 
         on how your links are performing.
       </p>
-      <button>Get Started</button>
+      <button class="btn-get-started">Get Started</button>
     </section>
-    <div>
+    <div class="shorten-url">
       <input type="url" name="" id="" placeholder="Shorten a link here...">
-      <input type="submit" value="Shorten It!">
+      <input class="shorten-url-submit" type="submit" value="Shorten It!">
     </div>
-    <section>
+    <section class="advanced-statistics">
       <h2>Advanced Statistics</h2>
       <p>
         Track how your links are performing across the web with our 
         advanced statistics dashboard.
       </p>
      <div>
-      <section>
+      <section class="stats">
+        <div class="stats-image-container">
+          <img  src="images\icon-brand-recognition.svg" loading="lazy" alt="icon-brand-recognition">
+        </div>
         <h3>Brand Recognition</h3>
         <p>
 Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.
         </p>
-        <img src="images\icon-brand-recognition.svg" loading="lazy" alt="icon-brand-recognition">
       </section>
-       <section>
+       <section class="stats" >
+        <div class="stats-image-container">
+          <img src="images\icon-detailed-records.svg" loadingg="lazy" alt="icon-detailed-records">
+        </div>
         <h3>Detailed Records</h3>
         <p>
           Gain insights into who is clicking your links. Knowing when and where 
           people engage with your content helps inform better decisions.
         </p>
-        <img src="images\icon-detailed-records.svg" loadingg="lazy" alt="icon-detailed-records">
       </section>
-      <section>
+      <section class="stats" >
+        <div class="stats-image-container">
+          <img src="images\icon-fully-customizable.svg" loading="lazy" alt="icon-fully-customizable">
+        </div>
         <h3>Fully Customizable</h3>
         <p> 
           Improve brand awareness and content discoverability through customizable 
           links, supercharging audience engagement.
         </p>
-        <img src="images\icon-fully-customizable.svg" loading="lazy" alt="icon-fully-customizable">
       </section>
      </div>
     </section>
-    <section>
+    <section class="boost">
       <h2>Boost your links today</h2>
-      <button>Get Started</button>
+      <button class="btn-get-started">Get Started</button>
     </section>
     <footer>
       <img src="images\logo.svg" loading="lazy" alt="logo">
@@ -99,7 +102,7 @@ Boost your brand recognition with each click. Generic links don’t mean a thing
             <li>Careers</li>
             <li>Contact</li>
               </ul>
-              <ul>
+              <ul class="social-icons">
                 <li><img src="images/icon-facebook.svg" loading="lazy" alt=""></li>
                 <li><img src="images\icon-twitter.svg" loading="lazy" alt=""></li>
                 <li><img src="images\icon-pinterest.svg" loading="lazy" alt=""></li>
