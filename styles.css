@@ -1,0 +1,27 @@
+@import url('https://fonts.google.com/specimen/Poppins');
+:root{
+          /* COLORS   */
+          /* PRIMARY COLORS  */
+ --primary-Cyan: hsl(180, 66%, 49%);
+ --Dark-Violet: hsl(257, 27%, 26%);
+
+          /* SECONDARY  COLORS  */
+--secondary-Red: hsl(0, 87%, 67%);
+
+          /* NEUTRAL   COLORS  */
+--neutral-Gray: hsl(0, 0%, 75%);
+--neutral-Grayish-Violet: hsl(257, 7%, 63%);
+--neutral-Very-Dark-Blue: hsl(255, 11%, 22%);
+--neutral-Very-Dark-Violet: hsl(260, 8%, 14%);         
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 18px;
+}
