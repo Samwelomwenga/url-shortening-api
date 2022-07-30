@@ -26,7 +26,10 @@ html{scroll-behavior: smooth;}
 body{
     font-size: 18px;
     font-family:Poppins,sans-serif;
-background-color: var(--neutral-Gray);  
+}
+.bg-grey{
+    background-color: var(--neutral-Gray);  
+
 }
 main{
     padding-top: 1rem;
@@ -38,6 +41,11 @@ header{
     align-items:flex-start;
     padding-top: 0.5rem;
     padding-bottom:0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+p{
+    color: var(--neutral-Grayish-Violet);
 }
 .nav-bar{
     display: none;
@@ -66,8 +74,7 @@ header{
     font-size: 1.2rem;
     border-radius: 1.5rem;
 }
-/* .hamber-menu{
-displ} */
+
 .bar{
     display: block;
     background-color: var(--neutral-Grayish-Violet);
@@ -81,6 +88,8 @@ displ} */
 }
 .intro{
    text-align: center; 
+   margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 .intro-heading{
     font-weight: 700;
@@ -103,9 +112,15 @@ displ} */
 .shorten-url{
     display: grid;
     gap: 0.5rem;
-    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1.9rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 4rem;
+    border-radius: .5rem;
     background-color: var(--neutral-Very-Dark-Blue);
     background-image: url('images/bg-shorten-mobile.svg');
     background-repeat: no-repeat;
@@ -125,12 +140,23 @@ displ} */
 }
 .advanced-statistics{
     text-align: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.advanced-statistics h2{
+    margin-bottom: 2rem;
+}
+.stats-container{
+    display: grid;
+    gap: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 .stats{
     position: relative;
     padding:1.5rem; 
     padding-top: 3rem;
-    margin: 4rem 2rem;
+    /* margin: 4rem 2rem; */
     background-color: white;
 }
 .stats-image-container{
@@ -150,10 +176,9 @@ displ} */
     display: grid;
     place-items: center;
     padding-top: 4.5rem;
-    padding-bottom: 1.5rem;
-    margin-left: 0;
+    padding-bottom: 3rem;
     color: white;
-    background-color: var(--neutral-Very-Dark-Blue);
+    background-color: var(--primary-Dark-Violet);
     background-image: url('images/bg-boost-mobile.svg');
     background-size: cover;
 }
@@ -185,6 +210,9 @@ color:var(--neutral-Gray);
     display: flex;
     place-items: center;
     gap: 1.5rem;
+}
+@media (m) {
+    
 }
 .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
