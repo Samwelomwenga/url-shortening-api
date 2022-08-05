@@ -1,135 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
-  
-  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
- 
-</head>
-<body>
-  <main>
-    <header>
-      <img class="header-logo" src="images\logo.svg" loading="lazy" alt="logo">
-      <nav data-visible="false" class="nav-bar">
-        <ul class="ul-navigation">
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>Resources</li>
-          <hr>
-        </ul>
-        <ul class="ul-action">
-          <li class="login">Login</li>
-          <li><button class="btn-sign-up">Sign Up</button></li>
-        </ul>
-      </nav>
-      <div class="hamber-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    </header>
-    <section class="intro">
-      <img class="illustration-working-image" src="images\illustration-working.svg" loading="lazy" alt="illustration-working">
-      <div>
-        <h1 class="intro-heading"> More than just shorter links</h1>
-      <p>Build your brand’s recognition and get detailed insights 
-        on how your links are performing.
-      </p>
-      <button class="btn-get-started">Get Started</button>
-      </div>
-    </section>
-    <section class="bg-grey">
-      <div class="shorten-url">
-        <input type="url" name="" id="" placeholder="Shorten a link here...">
-        <input class="shorten-url-submit" type="submit" value="Shorten It!">
-      </div>
-      <section class="advanced-statistics">
-        <h2>Advanced Statistics</h2>
-        <p>
-          Track how your links are performing across the web with our 
-          advanced statistics dashboard.
-        </p>
-       <div class="stats-container">
-        <section class="stats brand-recognition ">
-          <div class="stats-image-container">
-            <img  src="images\icon-brand-recognition.svg" loading="lazy" alt="icon-brand-recognition">
-          </div>
-          <h3>Brand Recognition</h3>
-          <p>
-  Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.
-          </p>
-        </section>
-        <div class="connector-container">
-         <span class="connector"></span>
-        </div>
-        <section class="stats" >
-          <div class="stats-image-container">
-            <img src="images\icon-detailed-records.svg" loadingg="lazy" alt="icon-detailed-records">
-          </div>
-          <h3>Detailed Records</h3>
-          <p>
-            Gain insights into who is clicking your links. Knowing when and where 
-            people engage with your content helps inform better decisions.
-          </p>
-        </section>
-        <div class="connector-container">
-          <span class="connector"></span>
-         </div>
-        <section class="stats fully-customizable" >
-          <div class="stats-image-container">
-            <img src="images\icon-fully-customizable.svg" loading="lazy" alt="icon-fully-customizable">
-          </div>
-          <h3>Fully Customizable</h3>
-          <p> 
-            Improve brand awareness and content discoverability through customizable 
-            links, supercharging audience engagement.
-          </p>
-        </section>
-       </div>
-      </section>
-    </section>
-    <section class="boost">
-      <h2>Boost your links today</h2>
-      <button class="btn-get-started">Get Started</button>
-    </section>
-    <footer>
-      <img class="footer-logo" src="images\logo.svg" loading="lazy" alt="logo">
-      <ul class="footer-nav">
-    <li>Features</li>
-    <li>Link Shortening</li>
-    <li>Branded Links</li>
-    <li>Analytics</li>
-      </ul>
-      <ul class="footer-nav">
-        <li>Resources</li>
-        <li>Blog</li>
-        <li>Developers</li>
-        <li>Support</li>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img
+          class="header-logo"
+          src="images\logo.svg"
+          loading="lazy"
+          alt="logo"
+        />
+        <nav data-visible="false" class="nav-bar">
+          <ul class="ul-navigation">
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Resources</li>
+            <hr />
           </ul>
-          <ul class="footer-nav" >
-            <li> Company</li>
-            <li>About</li>
-            <li>Our Team</li>
-            <li>Careers</li>
-            <li>Contact</li>
-              </ul>
-              <ul class="social-icons">
-                <li><img src="images/icon-facebook.svg" loading="lazy" alt="icon-facebook"></li>
-                <li><img src="images\icon-twitter.svg" loading="lazy" alt="icon-twitter"></li>
-                <li><img src="images\icon-pinterest.svg" loading="lazy" alt="icon-pinterest"></li>
-                <li><img src="images\icon-instagram.svg" loading="lazy" alt="icon-instagram"></li>
-              </ul>   
-    </footer>
-  </main>
+          <ul class="ul-action">
+            <li class="login">Login</li>
+            <li><button class="btn-sign-up">Sign Up</button></li>
+          </ul>
+        </nav>
+        <div class="hamber-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </header>
+      <section class="intro">
+        <img
+          class="illustration-working-image"
+          src="images\illustration-working.svg"
+          loading="lazy"
+          alt="illustration-working"
+        />
+        <div>
+          <h1 class="intro-heading">More than just shorter links</h1>
+          <p>
+            Build your brand’s recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <button class="btn-get-started">Get Started</button>
+        </div>
+      </section>
+      <section class="bg-grey">
+        <div class="shorten-url">
+          <input
+            type="url"
+            name="shorten-url"
+            id="shorten-url"
+            placeholder="Shorten a link here..."
+          />
+          <input class="shorten-url-submit" type="submit" value="Shorten It!" />
+        </div>
+        <section class="advanced-statistics">
+          <h2>Advanced Statistics</h2>
+          <p>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+          <div class="stats-container">
+            <section class="stats brand-recognition">
+              <div class="stats-image-container">
+                <img
+                  src="images\icon-brand-recognition.svg"
+                  loading="lazy"
+                  alt="icon-brand-recognition"
+                />
+              </div>
+              <h3>Brand Recognition</h3>
+              <p>
+                Boost your brand recognition with each click. Generic links
+                don’t mean a thing. Branded links help instil confidence in your
+                content.
+              </p>
+            </section>
+            <div class="connector-container">
+              <span class="connector"></span>
+            </div>
+            <section class="stats">
+              <div class="stats-image-container">
+                <img
+                  src="images\icon-detailed-records.svg"
+                  loadingg="lazy"
+                  alt="icon-detailed-records"
+                />
+              </div>
+              <h3>Detailed Records</h3>
+              <p>
+                Gain insights into who is clicking your links. Knowing when and
+                where people engage with your content helps inform better
+                decisions.
+              </p>
+            </section>
+            <div class="connector-container">
+              <span class="connector"></span>
+            </div>
+            <section class="stats fully-customizable">
+              <div class="stats-image-container">
+                <img
+                  src="images\icon-fully-customizable.svg"
+                  loading="lazy"
+                  alt="icon-fully-customizable"
+                />
+              </div>
+              <h3>Fully Customizable</h3>
+              <p>
+                Improve brand awareness and content discoverability through
+                customizable links, supercharging audience engagement.
+              </p>
+            </section>
+          </div>
+        </section>
+      </section>
+      <section class="boost">
+        <h2>Boost your links today</h2>
+        <button class="btn-get-started">Get Started</button>
+      </section>
+      <footer>
+        <img
+          class="footer-logo"
+          src="images\logo.svg"
+          loading="lazy"
+          alt="logo"
+        />
+        <ul class="footer-nav">
+          <li>Features</li>
+          <li>Link Shortening</li>
+          <li>Branded Links</li>
+          <li>Analytics</li>
+        </ul>
+        <ul class="footer-nav">
+          <li>Resources</li>
+          <li>Blog</li>
+          <li>Developers</li>
+          <li>Support</li>
+        </ul>
+        <ul class="footer-nav">
+          <li>Company</li>
+          <li>About</li>
+          <li>Our Team</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+        <ul class="social-icons">
+          <li>
+            <img
+              src="images/icon-facebook.svg"
+              loading="lazy"
+              alt="icon-facebook"
+            />
+          </li>
+          <li>
+            <img
+              src="images\icon-twitter.svg"
+              loading="lazy"
+              alt="icon-twitter"
+            />
+          </li>
+          <li>
+            <img
+              src="images\icon-pinterest.svg"
+              loading="lazy"
+              alt="icon-pinterest"
+            />
+          </li>
+          <li>
+            <img
+              src="images\icon-instagram.svg"
+              loading="lazy"
+              alt="icon-instagram"
+            />
+          </li>
+        </ul>
+      </footer>
+    </main>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">SAMWEL OMWENGA</a>.
-  </div>
-  <script src="app.js"></script>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">SAMWEL OMWENGA</a>.
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
