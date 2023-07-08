@@ -50,7 +50,7 @@ p{
 }
 [data-visible="true"]{
     position: absolute;
-    top: 3%;
+    top: 8%;
     width: 85%;
     gap: 1rem;
     padding: 1rem 1rem;
@@ -153,10 +153,51 @@ p{
     color:white;
     font-weight: 700;
 }
-.advanced-statistics{
+/* .shorten-history-container{
+    display: grid;
+    width: 100%;
+    place-items: center;
+} */
+.shorten-history{
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    margin-inline: .7rem;
+    border-radius: .3rem;
+    font-size: 1rem;
+    background-color:white;
+}
+.shorten-history{
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+hr{
+    width: 100%;
+    
+}
+[data-copied]{
+    width: 100%;
     text-align: center;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    font-size: 1rem;
+   border-radius: .3rem;
+    border: none;
+    color: white;
+    padding-block: .3rem;
+}
+[data-copied="false"]{
+    background-color: var(--primary-Cyan);
+}
+[data-copied="true"]{
+    background-color: var(--primary-Dark-Violet);
+}
+.shorten-history p{
+    color: var(--primary-Cyan);
+}
+.advanced-statistics{
+    margin-top: 3rem;
+    text-align: center;
+    /* margin-left: 1.5rem; */
+    /* margin-right: 1.5rem; */
 }
 .advanced-statistics h2{
     margin-bottom: 2rem;
@@ -171,7 +212,7 @@ p{
     position: relative;
     padding:1.5rem; 
     padding-top: 3rem;
-    /* margin: 4rem 2rem; */
+  margin-inline: 2rem;
     background-color: white;
 }
 .stats h3{
@@ -335,6 +376,26 @@ margin-bottom: 3rem;
         height: 2.7rem;
     
     }
+    .shorten-history{
+        display: flex;
+        align-items: center;
+        /* justify-content: space-between; */
+        margin-inline: 9rem;
+    }
+    .shorten-history div{
+        display: flex;
+        gap: 3rem;
+        /* justify-content: space-between; */
+        margin-left: auto;
+    }
+    [data-copied]{
+        height: 2.7rem;
+    }
+    .shorten-history p{
+        display: inline-block;
+        margin-left: auto;
+        width: 100%;
+    }
     .stats-container{
         display: flex;
         margin-left: 9rem;
@@ -346,6 +407,7 @@ margin-bottom: 3rem;
         right: 80%;
     }
     .stats{
+        margin-inline: 0;
         padding-bottom: 3rem;
     }
     
