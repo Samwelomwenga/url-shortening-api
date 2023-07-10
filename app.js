@@ -34,9 +34,12 @@ const render = async () => {
   const localData = JSON.parse(localStorage.getItem(localKey));
   //  console.log(localData)
   const { code, short_link, original_link } = localData;
-  const shortenHistoryContainer=document.querySelector(".shorten-history-container")
-shortenHistoryContainer.insertAdjacentHTML('beforebegin',
-`
+  const shortenHistoryContainer = document.querySelector(
+    ".shorten-history-container"
+  );
+  shortenHistoryContainer.insertAdjacentHTML(
+    "beforebegin",
+    `
 <div class="shorten-history">
 <h3>
 
@@ -50,34 +53,44 @@ shortenHistoryContainer.insertAdjacentHTML('beforebegin',
 ="false" class="copy-button">Copy</button>
 </div>
 </div>`
-)
+  );
 };
 // render();
 
 shortenUrlSubmit.addEventListener("click", () => {
-  // urlShortener(shortenUrl.value);
   render();
 });
 const shortenHistory = document.querySelector(".shorten-history");
 
-shortenUrl.oninvalid = (e) => {
-  e.target.setCustomValidity("");
-  if (!e.target.validity.valid) {
-    e.target.setCustomValidity("This field cannot be blank");
-  }
-};
-shortenUrl.oninput = (e) => {
-  e.target.setCustomValidity("");
-};
+// shortenUrl.oninvalid = (e) => {
+//   e.target.setCustomValidity("");
+//   if (!e.target.validity.valid) {
+//     e.target.setCustomValidity("This field cannot be blank");
+//   }
+// };
+// shortenUrl.oninput = (e) => {
+//   e.target.setCustomValidity("");
+// };
 
-const copyButton=document.querySelector(".copy-buton");
-copyButton.addEventListener("click",()=>{
-  console.log('copyButton')
-  copyButton.setAttribute("data-copied",true);
-})
+if (navigator.clipboard) {
+  const copyButton = document.querySelector("copy-button");
+  const shortLink = document.querySelector(".short-link");
+  const dataCopied = copyButton.getAttribute("data-copied");
+  console.log(dataCopied);
+  console.log(shortLink);
 
-
-
+  copyButton.addEventListener("click",  () => {
+    try {
+      navigator.clipboard.writeText(shortLink.href);
+      console.log("text copied");
+      if (dataCopied === "false") {
+        copyButton.setAttribute("data-copied", true);
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  });
+}
 
 const navBar = document.querySelector(".nav-bar");
 const hamburgerMenu = document.querySelector(".hamber-menu");
