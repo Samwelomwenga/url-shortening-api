@@ -9,62 +9,54 @@ const urlShortener = async (link) => {
     let response = await fetch(shortenApiUrl);
     let data = await response.json();
 
-    let results = {
-      code: data.result.code,
-      originalLink: data.result.original_link,
-      shortLink: data.result.short_link,
-    };
-    return results;
+    return data.result;
   } catch (error) {
-    alert(error.message);
+    console.error(error.message);
   }
 };
-// localStorage.clear()
+localStorage.clear();
 const toLocaleStorage = async () => {
   try {
-    let ur = await urlShortener(shortenUrl.value);
-    for (const [key, item] of Object.entries(ur)) {
-      localStorage.setItem(key, item);
-      // console.log(localStorage.getItem("originalLink"));
-    }
-    // console.log(localStorage.key(2))
+    let urlObject = await urlShortener(shortenUrl.value);
+    let urlObjectJSON = JSON.stringify(urlObject);
+    // console.log(urlObjectJSON)
+    let = urlKey = urlObject.code;
+    localStorage.setItem(urlKey, urlObjectJSON);
+
+    return urlKey;
   } catch (error) {
-    alert(error.message);
+    console.error(error.message);
   }
 };
 // toLocaleStorage();
-const render=async()=>{
-//   return`    
-//   <div class="shorten-history">
-//   <h3>${originalLink } </h3>
-//   {/* <hr> */}
-//   <div>
-//     <p>${shortLink}</p>
-//   <button data-copied
-//   ="false">Copy</button>
-//   </div>
-// </div>`
+const render = async () => {
+  const localKey = await toLocaleStorage();
+  const localData = JSON.parse(localStorage.getItem(localKey));
+  //  console.log(localData)
+  const { code, short_link, original_link } = localData;
+  const shortenHistoryContainer=document.querySelector(".shorten-history-container")
+shortenHistoryContainer.insertAdjacentHTML('beforebegin',
+`
+<div class="shorten-history">
+<h3>
 
-//   let localKeys = Object.keys(localStorage);
-//   for(let localData of localKeys) {
-// console.log(`${localData} ${localStorage.getItem(localData)}`)
-// return(
-//   <div class="shorten-history">
-//   <h3>Lorem ipsum dolor  </h3>
-//   <hr>
-//   <div>
-//     <p>Lorem ipsum dolor, sit</p>
-//   <button data-copied
-//   ="false">Copy</button>
-//   </div>
-// </div>
-// )
-//   }
-}
-render();
+<a href="${original_link}" target="_blank" class="original-link"> ${original_link}</a></h3>
+<hr>
+<div>
+  <p>
+  <a href="${short_link}" target="_blank" class="short-link"> ${short_link}</a>
+ </p>
+<button data-copied
+="false" class="copy-button">Copy</button>
+</div>
+</div>`
+)
+};
+// render();
 
 shortenUrlSubmit.addEventListener("click", () => {
-  urlShortener(shortenUrl.value);
+  // urlShortener(shortenUrl.value);
+  render();
 });
 const shortenHistory = document.querySelector(".shorten-history");
 
@@ -77,6 +69,15 @@ shortenUrl.oninvalid = (e) => {
 shortenUrl.oninput = (e) => {
   e.target.setCustomValidity("");
 };
+
+const copyButton=document.querySelector(".copy-buton");
+copyButton.addEventListener("click",()=>{
+  console.log('copyButton')
+  copyButton.setAttribute("data-copied",true);
+})
+
+
+
 
 const navBar = document.querySelector(".nav-bar");
 const hamburgerMenu = document.querySelector(".hamber-menu");
