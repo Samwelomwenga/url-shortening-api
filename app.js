@@ -29,14 +29,14 @@ const toLocaleStorage = async () => {
   }
 };
 // toLocaleStorage();
+const shortenHistoryContainer = document.querySelector(
+  ".shorten-history-container"
+);
 const render = async () => {
   const localKey = await toLocaleStorage();
   const localData = JSON.parse(localStorage.getItem(localKey));
   //  console.log(localData)
   const { code, short_link, original_link } = localData;
-  const shortenHistoryContainer = document.querySelector(
-    ".shorten-history-container"
-  );
   shortenHistoryContainer.insertAdjacentHTML(
     "beforebegin",
     `
@@ -47,7 +47,7 @@ const render = async () => {
 <hr>
 <div>
   <p>
-  <a href="${short_link}" target="_blank" class="short-link"> ${short_link}</a>
+  <a class="short-link" href="${short_link}" target="_blank" > ${short_link}</a>
  </p>
 <button data-copied
 ="false" class="copy-button">Copy</button>
@@ -58,9 +58,11 @@ const render = async () => {
 // render();
 
 shortenUrlSubmit.addEventListener("click", () => {
-  render();
+  // render();
+  // copyDataFunction();
 });
-const shortenHistory = document.querySelector(".shorten-history");
+// const shortenHistory = document.querySelector(".shorten-history");
+// console.log(shortenHistory);
 
 // shortenUrl.oninvalid = (e) => {
 //   e.target.setCustomValidity("");
@@ -71,26 +73,52 @@ const shortenHistory = document.querySelector(".shorten-history");
 // shortenUrl.oninput = (e) => {
 //   e.target.setCustomValidity("");
 // };
-
-if (navigator.clipboard) {
-  const copyButton = document.querySelector("copy-button");
-  const shortLink = document.querySelector(".short-link");
-  const dataCopied = copyButton.getAttribute("data-copied");
-  console.log(dataCopied);
-  console.log(shortLink);
-
-  copyButton.addEventListener("click",  () => {
-    try {
-      navigator.clipboard.writeText(shortLink.href);
-      console.log("text copied");
-      if (dataCopied === "false") {
-        copyButton.setAttribute("data-copied", true);
+const copyDataFunction = async () => {
+  await render();
+  let observer = new MutationObserver((mutations) => {
+    for (let mutation of mutations) {
+      for (let node of mutation.addedNodes) {
+        if (node.matches('a[class="short-link"]')) {
+          try {
+            // const shortLink = document.querySelector(".short-link");
+            console.log(node);
+            // navigator.clipboard.writeText(shortLink.href);
+            console.log("text copied");
+            // if (dataCopied === "false") {
+            //   copyButton.setAttribute("data-copied", true);
+            // }
+          } catch (error) {
+            console.error(error.message);
+          }
+        }
       }
-    } catch (error) {
-      console.error(error.message);
     }
   });
-}
+  observer.observe(shortenHistoryContainer, {
+    subtree: true,
+    characterData: true,
+  });
+  copyDataFunction();
+
+  // if (navigator.clipboard) {
+  //   const copyButton = document.querySelector("copy-button");
+  //   const dataCopied = copyButton.getAttribute("data-copied");
+  //   console.log(dataCopied);
+  //   console.log(shortLink);
+
+  //   copyButton.addEventListener("click",  () => {
+  //     try {
+  //       navigator.clipboard.writeText(shortLink.href);
+  //       console.log("text copied");
+  //       if (dataCopied === "false") {
+  //         copyButton.setAttribute("data-copied", true);
+  //       }
+  //     } catch (error) {
+  //       console.error(error.message);
+  //     }
+  //   });
+  // }
+};
 
 const navBar = document.querySelector(".nav-bar");
 const hamburgerMenu = document.querySelector(".hamber-menu");
