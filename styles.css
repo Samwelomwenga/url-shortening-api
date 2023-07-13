@@ -22,8 +22,8 @@
 li {
   list-style: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 html {
   scroll-behavior: smooth;
@@ -132,7 +132,7 @@ p {
   padding-left: 1.5rem;
   padding-right: 2rem;
   padding-top: 2rem;
-  padding-bottom: 1.9rem;
+  padding-bottom: 1rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   margin-top: 1rem;
@@ -143,17 +143,39 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.shorten-url input {
+[data-valid="true"] {
   display: block;
   width: 100%;
   padding: 0.6rem 0 0.6rem 0.5rem;
   border-radius: 0.3rem;
   border: none;
 }
+[data-valid="false"] {
+  border: 2px solid var(--secondary-Red);
+  border-radius: 0.3rem;
+  padding: 0.6rem 0 0.6rem 0.5rem;
+  color: var(--secondary-Red);
+}
 .shorten-url-submit {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0 0.6rem 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
   background-color: var(--primary-Cyan);
   color: white;
   font-weight: 700;
+}
+[data-error-message="true"] {
+  color: var(--secondary-Red);
+  font-weight: 500;
+  font-size: 1rem;
+}
+[data-error-message="false"] {
+  visibility: hidden;
+}
+[data-error-message="true"] .shorten-url {
+  border: var(--secondary-Red);
 }
 .shorten-history-container {
   display: grid;
@@ -193,8 +215,8 @@ hr {
 [data-copied="true"] {
   background-color: var(--primary-Dark-Violet);
 }
-.original-link{
-    color: var(--neutral-Very-Dark-Violet);
+.original-link {
+  color: var(--neutral-Very-Dark-Violet);
 }
 .short-link {
   color: var(--primary-Cyan);
@@ -295,10 +317,10 @@ footer {
   transition: ease-out;
   transition-duration: 400ms;
 }
-[data-copied]:hover{
-    cursor: pointer;
-    opacity: .8;
-  }
+[data-copied]:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 .ul-navigation li:hover,
 .login:hover {
   cursor: pointer;
@@ -383,7 +405,7 @@ footer {
     gap: 1rem;
     margin-left: 9rem;
     margin-right: 9rem;
-    padding: 2.5rem;
+    padding: 1, 7rem;
     background-image: url("images/bg-shorten-desktop.svg");
   }
   .shorten-url input {
@@ -406,7 +428,7 @@ footer {
     width: 6.25rem;
     height: 2.7rem;
   }
-  
+
   /* .shorten-history p {
     display: inline-block;
     margin-left: auto;
