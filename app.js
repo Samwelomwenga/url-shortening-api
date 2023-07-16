@@ -14,7 +14,6 @@ const urlShortener = async (link) => {
     console.error(error.message);
   }
 };
-localStorage.clear();
 const toLocaleStorage = async () => {
   try {
     let urlObject = await urlShortener(shortenUrl.value);
@@ -47,14 +46,13 @@ const render = async () => {
   <a class="short-link" href="${short_link}" target="_blank" > ${short_link}</a>
  </p>
 <button data-copied
-="false" class="copy-button">Copy</button>
+="false" class="copy-button" data-short-link="${short_link}" onclick="handleCopyData(this)">Copy</button>
 </div>
 </div>`
   );
 };
 
 shortenUrlSubmit.addEventListener("click", async () => {
-  // await copyDataFunction(shortenHistoryContainer);
   handleDataError();
   render();
 });
@@ -74,71 +72,19 @@ const handleDataError = () => {
   });
 };
 
-// const copyDataFunction = async (elm) => {
-// await render();
-// let mList = document.getElementById('myList'),
-// try {
-//   options = {
-//     childList: true
-//   },
-//   observer = new MutationObserver(mCallback);
-
-//   function mCallback(mutations) {
-//     for (let mutation of mutations) {
-//       if (mutation.type === 'childList') {
-//         console.log('Mutation Detected: A child node has been added or removed.');
-//       }
-//     }
-//   }
-
-//   observer.observe(elm, options);
-// } catch (error) {
-//   console.error(error.message);
-// }
-
-//   const handleMutation= ()=>{
-//     const copyButton = document.querySelector(".copy-button");
-//     const shortLinkHref = document.querySelector('.short-link').getAttribute('href');
-//     console.log(copyButton,"\n",shortLinkHref);
-//     observer.disconnect();
-//   }
-//   let observer = new MutationObserver((mutations) => {
-//     for (let mutation of mutations) {
-//     if (mutation.type==='childList'&&mutation.addedNodes.length>0) {
-//       console.log("Yes")
-// mutation.addedNodes.forEach((node)=>{
-//   if (node.classList&&node.classList.contains('.shorten-history')) {
-//     handleMutation();
-//   }
-// })
-//     }
-//     }
-//   });
-//   observer.observe(shortenHistoryContainer, {
-//     subtree: true,
-//     childList: true,
-//   });
-// copyDataFunction();
-
-// if (navigator.clipboard) {
-//   const copyButton = document.querySelector("copy-button");
-//   const dataCopied = copyButton.getAttribute("data-copied");
-//   console.log(dataCopied);
-//   console.log(shortLink);
-
-//   copyButton.addEventListener("click",  () => {
-//     try {
-//       navigator.clipboard.writeText(shortLink.href);
-//       console.log("text copied");
-//       if (dataCopied === "false") {
-//         copyButton.setAttribute("data-copied", true);
-//       }
-//     } catch (error) {
-//       console.error(error.message);
-//     }
-//   });
-// }
-// };
+function handleCopyData(copyButton) {
+  if (navigator.clipboard) {
+    try {
+      navigator.clipboard.writeText(copyButton.dataset.shortLink);
+      if (copyButton.dataset.copied === "false") {
+        copyButton.setAttribute("data-copied", true);
+        copyButton.innerHTML = "Copied!";
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+}
 
 const navBar = document.querySelector(".nav-bar");
 const hamburgerMenu = document.querySelector(".hamber-menu");

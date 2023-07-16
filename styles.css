@@ -72,10 +72,7 @@ p {
   position: absolute;
   transform: translateX(-130%);
 }
-/* [data-visible="true"] .hamber-menu:first-child{
-    background-color: brown;
-    transform: translate(90%);
-} */
+
 .ul-navigation,
 .ul-action {
   display: grid;
@@ -115,7 +112,6 @@ p {
 }
 .btn-get-started {
   width: 60%;
-  color: white;
   background-color: var(--primary-Cyan);
   border: none;
   padding-top: 0.6rem;
@@ -125,6 +121,9 @@ p {
   font-weight: 700;
   font-size: 1rem;
   border-radius: 1.5rem;
+}
+.btn-get-started > a {
+  color: white;
 }
 .shorten-url {
   display: grid;
@@ -138,10 +137,12 @@ p {
   margin-top: 1rem;
   margin-bottom: 4rem;
   border-radius: 0.5rem;
+  scroll-margin-top: 0.5rem;
   background-color: var(--neutral-Very-Dark-Blue);
   background-image: url("images/bg-shorten-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  transform: translateY(-20%);
 }
 [data-valid="true"] {
   display: block;
@@ -192,9 +193,10 @@ p {
   font-size: 1rem;
   background-color: white;
 }
-.shorten-history {
+.shorten-history h3 {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 hr {
   width: 100%;
@@ -207,7 +209,7 @@ hr {
   margin-top: 0.9rem;
   border: none;
   color: white;
-  padding-block: 0.3rem;
+  padding-block: 0.7rem;
 }
 [data-copied="false"] {
   background-color: var(--primary-Cyan);
@@ -224,15 +226,13 @@ hr {
 .advanced-statistics {
   margin-top: 3rem;
   text-align: center;
-  /* margin-left: 1.5rem; */
-  /* margin-right: 1.5rem; */
 }
+
 .advanced-statistics h2 {
   margin-bottom: 2rem;
 }
 .stats-container {
   display: grid;
-  /* gap: 2rem; */
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
@@ -414,14 +414,12 @@ footer {
   .shorten-history {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     margin-inline: 9rem;
   }
   .shorten-history div {
     display: flex;
     align-items: center;
     gap: 3rem;
-    /* justify-content: space-between; */
     margin-left: auto;
   }
   [data-copied] {
@@ -429,11 +427,6 @@ footer {
     height: 2.7rem;
   }
 
-  /* .shorten-history p {
-    display: inline-block;
-    margin-left: auto;
-    width: 100%;
-  } */
   .stats-container {
     display: flex;
     margin-left: 9rem;
