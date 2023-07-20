@@ -54,7 +54,7 @@ const render = async () => {
 };
 
 shortenUrlSubmit.addEventListener("click", async () => {
-  // await copyDataFunction(shortenHistoryContainer);
+
   handleDataError();
   render();
 });
@@ -160,7 +160,6 @@ function iterateLocalStorage() {
     const value = localStorage.getItem(key);
     console.log(`Key: ${key}, Value: ${value}`);
     // You can do further processing or display the data on the page as needed
-    let localData = JSON.parse(localStorage.getItem(key));
     const { code, short_link, original_link } = value;
 
     shortenHistoryContainer.insertAdjacentHTML(
@@ -182,4 +181,4 @@ function iterateLocalStorage() {
     )
   }
 }
-iterateLocalStorage();
+// iterateLocalStorage();
