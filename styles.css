@@ -92,7 +92,7 @@ p {
   font-size: 1.2rem;
   border-radius: 1.5rem;
 }
-
+.bt
 .bar {
   display: block;
   background-color: var(--neutral-Grayish-Violet);
@@ -126,6 +126,9 @@ p {
   font-size: 1rem;
   border-radius: 1.5rem;
 }
+.btn-get-started a{
+  color: white;
+}
 .shorten-url {
   display: grid;
   gap: 0.5rem;
@@ -138,6 +141,7 @@ p {
   margin-top: 1rem;
   margin-bottom: 4rem;
   border-radius: 0.5rem;
+  scroll-margin-top: 1rem;
   transform: translateY(-3rem);
   background-color: var(--neutral-Very-Dark-Blue);
   background-image: url("images/bg-shorten-mobile.svg");
