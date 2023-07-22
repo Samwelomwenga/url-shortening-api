@@ -59,6 +59,20 @@ shortenUrlSubmit.addEventListener("click", async () => {
   render();
 });
 
+function handleCopyData(copyButton){
+  if (navigator.clipboard) {
+    try {
+      navigator.clipboard.writeText(copyButton.dataset.shortLink);
+      if (copyButton.dataset.copied==='false') {
+        copyButton.setAttribute('data-copied',true);
+        copyButton.innerHTML="Copied !"
+      }
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+}
+
 const handleDataError = () => {
   shortenUrl.setCustomValidity("");
   const valid = shortenUrl.checkValidity();
