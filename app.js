@@ -14,7 +14,7 @@ const urlShortener = async (link) => {
     console.error(error.message);
   }
 };
-localStorage.clear();
+// localStorage.clear();
 const toLocaleStorage = async () => {
   try {
     let urlObject = await urlShortener(shortenUrl.value);
@@ -102,32 +102,32 @@ hamburgerMenu.addEventListener("click", () => {
 });
 
 
-function iterateLocalStorage() {
+
+window.addEventListener("load", ()=>{
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-    console.log(`Key: ${key}, Value: ${value}`);
-    // You can do further processing or display the data on the page as needed
-    let localData = JSON.parse(localStorage.getItem(key));
-    const { code, short_link, original_link } = value;
-
+    const localData = JSON.parse(localStorage.getItem(key));
+    const { code, short_link, original_link } = localData;
     shortenHistoryContainer.insertAdjacentHTML(
       "beforebegin",
       `
-      <div class="shorten-history">
-        <h3>
-          <a href="${original_link}" target="_blank" class="original-link">${original_link}</a>
-        </h3>
-        <hr>
-        <div>
-          <p>
-            <a class="short-link" href="${short_link}" target="_blank">${short_link}</a>
-          </p>
-          <button data-copied="false" class="copy-button" data-short-link="${short_link}" onclick="handleCopyData(this)">Copy</button>
-        </div>
-      </div>
-      `
-    )
+  <div id="${code}" class="shorten-history">
+  <h3>
+  
+  <a href="${original_link}" target="_blank" class="original-link"> ${original_link}</a></h3>
+  <hr>
+  <div>
+    <p>
+    <a class="short-link" href="${short_link}" target="_blank" > ${short_link}</a>
+   </p>
+  <button data-copied
+  ="false" class="copy-button" data-short-link="${short_link}" onclick="handleCopyData(this)">Copy</button>
+  </div>
+  </div>`);
+    // // You can do further processing or display the data on the page as needed
+    // let localData = JSON.parse(localStorage.getItem(key));
+    // const { code, short_link, original_link } = localData;
+
+
   }
-}
-// iterateLocalStorage();
+});
